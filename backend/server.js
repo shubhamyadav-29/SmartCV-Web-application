@@ -17,6 +17,7 @@ app.use(express.json());
 // ROUTES
 app.use("/api/auth", require("./routes/authRoutes"));
 
+app.use("/api/resumes", require("./routes/resumeRoutes"));
 
 app.get("/", (req, res) => {
   res.send("SmartCV API Running...");
