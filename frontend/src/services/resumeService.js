@@ -45,3 +45,26 @@ export const deleteResume = async (id) => {
 
   return response.data;
 };
+
+
+// CREATE RESUME
+export const createResume = async (resumeData) => {
+
+  const userInfo = JSON.parse(
+    localStorage.getItem("userInfo")
+  );
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userInfo.token}`,
+    },
+  };
+
+  const response = await axios.post(
+    API_URL,
+    resumeData,
+    config
+  );
+
+  return response.data;
+};
